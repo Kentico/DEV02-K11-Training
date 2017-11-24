@@ -1,7 +1,7 @@
 # Downloadable content for Advanced Developer training
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() [![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)]() 
 
-This repository contains sample solutions for Kentico **Advanced Developer** course that covers back-end development with Kentico Portal Engine. Code in this package was created on Kentico 11.0 & .NET 4.6.
+This repository contains sample solution for Kentico **Advanced Developer** course that covers back-end development with Kentico Portal Engine. Code in this package was created on Kentico 11.0 & .NET 4.6.
 
 Find out more about the [Advanced Developer](https://www.kentico.com/services/training/advanced-developer) course.
 
