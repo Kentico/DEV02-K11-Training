@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions>
+    <action name="edit" caption="$General.Edit$" fonticonclass="icon-edit" fonticonstyle="allow" />
+    <action name="#delete" caption="$General.Delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$General.ConfirmDelete$" />
+  </actions>
+  <columns>
+    <column source="DoctorFirstName" caption="First name" wrap="false" localize="true">
+      <filter type="text" size="200" />
+    </column>
+    <column source="DoctorLastName" caption="Last name" wrap="false" localize="true">
+      <filter type="text" size="200" />
+    </column>
+    <column source="DoctorSpecialty" caption="Specialty" wrap="false" localize="true">
+      <filter type="text" size="200" />
+    </column>
+    <column source="DoctorEmail" caption="Email" width="100%" />
+  </columns>
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>
