@@ -14,7 +14,7 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
 {
     #region Variables
 
-    private List<String> errorList;
+    private List<String> errors;
 
     #endregion
 
