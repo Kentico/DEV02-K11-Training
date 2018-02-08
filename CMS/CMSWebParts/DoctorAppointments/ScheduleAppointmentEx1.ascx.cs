@@ -59,7 +59,7 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
         else
         {
             // show all errors
-            ShowErrors(errorList);
+            ShowErrors(errors);
         }
     }
 
@@ -121,12 +121,12 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
     /// <summary>
     /// Displays errors on site
     /// </summary>
-    private void ShowErrors(List<String> errorList)
+    private void ShowErrors(List<String> errors)
     {
-        if (errorList.Count > 0)
+        if (errors.Count > 0)
         {
             // bind Error list
-            ErrorList.DataSource = errorList;
+            ErrorList.DataSource = errors;
             ErrorList.DataBind();
             plcErrorMessage.Visible = true;
         }
@@ -138,11 +138,11 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
     private void ShowErrors(string errorMessage)
     {
         // create error list
-        var errorList = new List<String>();
-        errorList.Add(errorMessage);
+        var errors = new List<String>();
+        errors.Add(errorMessage);
 
         // bind Error list 
-        ErrorList.DataSource = errorList;
+        ErrorList.DataSource = errors;
         ErrorList.DataBind();
         plcErrorMessage.Visible = true;
 
@@ -171,51 +171,51 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
     private bool ValidateForm()
     {
         bool isValid = true;
-        errorList = new List<String>();
+        errors = new List<String>();
 
         if (String.IsNullOrEmpty(FirstName.Value))
         {
-            errorList.Add("First name is required");
+            errors.Add("First name is required");
             isValid = false;
         }
         if (String.IsNullOrEmpty(LastName.Value))
         {
-            errorList.Add("Last name is required");
+            errors.Add("Last name is required");
             isValid = false;
         }
         if (String.IsNullOrEmpty(Email.Value))
         {
-            errorList.Add("E-mail is required");
+            errors.Add("E-mail is required");
             isValid = false;
         }
         else
         {
             if (!ValidationHelper.IsEmail(Email.Value))
             {
-                errorList.Add("Invalid e-mail address");
+                errors.Add("Invalid e-mail address");
                 isValid = false;
             }
         }
         if (String.IsNullOrEmpty(DateOfBirth.Value))
         {
-            errorList.Add("Date of Birth is required");
+            errors.Add("Date of Birth is required");
             isValid = false;
         }
         if (String.IsNullOrEmpty(DateOfAppointment.Value))
         {
-            errorList.Add("Date of appointment is required");
+            errors.Add("Date of appointment is required");
             isValid = false;
         }
         if (String.IsNullOrEmpty(SelectDoctor.SelectedValue))
         {
-            errorList.Add("Please select a doctor");
+            errors.Add("Please select a doctor");
             isValid = false;
         }
         if (!String.IsNullOrEmpty(TelephoneNumber.Value))
         {
             if (!ValidationHelper.IsUsPhoneNumber(TelephoneNumber.Value))
             {
-                errorList.Add("Please use valid U.S. phone number");
+                errors.Add("Please use valid U.S. phone number");
                 isValid = false;
             }
         }
