@@ -14,7 +14,7 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
 {
     #region Variables
 
-    private List<String> errors;
+    private List<String> errors = new List<string>();
 
     #endregion
 
@@ -53,7 +53,7 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
             // Hide errors in case there are some still displayed
             HideErrors();
 
-            // Inserts new appointment from from data
+            // Inserts new appointment from form data
             InsertNewAppointment();
         }
         else
@@ -138,11 +138,11 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
     private void ShowErrors(string errorMessage)
     {
         // create error list
-        var errors = new List<String>();
-        errors.Add(errorMessage);
+        var errorList = new List<String>();
+        errorList.Add(errorMessage);
 
         // bind Error list 
-        ErrorList.DataSource = errors;
+        ErrorList.DataSource = errorList;
         ErrorList.DataBind();
         plcErrorMessage.Visible = true;
 
@@ -171,7 +171,7 @@ public partial class CMSWebParts_DoctorAppointments_ScheduleAppointmentEx1 : CMS
     private bool ValidateForm()
     {
         bool isValid = true;
-        var errors = new List<String>();
+        errors = new List<String>();
 
         if (String.IsNullOrEmpty(FirstName.Value))
         {
